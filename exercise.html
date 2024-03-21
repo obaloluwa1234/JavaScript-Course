@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercises</title>
+</head>
+<body>
+  <button onclick="console.log(document.querySelector('button'));">9a</button>
+
+  <button class="js-done" onclick="console.log(document.querySelector('.js-done').innerHTML);">9b done!</button>
+  <br>
+
+  <button class="js-head-button" onclick="
+    yourChoice();
+  ">Heads</button>
+
+  <button class="js-tail-button" onclick="
+    yourChoice2();
+  ">Tails</button>
+
+  <p class="js-choice"></p>
+
+  <input type="text" placeholder="Type your name" class="js-name-input" onkeydown="
+    nameOnkeydown(event);
+  ">
+  <button type="submit"  onclick="
+    yourName()
+  ">Submit</button>
+  <p class="js-name-text" onclick=""></p>
+
+<script>
+  /*
+  const headElement = document.querySelector('.js-head-button').innerHTML;
+  const tailElement =  document.querySelector('.js-tail-button').innerHTML;
+ 
+  function yourChoice() {
+    if (headElement) {
+      document.querySelector('.js-choice')
+        .innerHTML =`You chose:${headElement}`
+      console.log(headElement);
+      } 
+    
+    }
+  function yourChoice2(params) {
+    if (tailElement) {
+      document.querySelector('.js-choice')
+        .innerHTML = `You chose:${tailElement}`
+      console.log(tailElement);
+    }
+  }
+*/
+function nameOnkeydown(event) {
+  if (event.key ==='Enter') {
+    yourName()
+  }
+}
+
+function yourName() {
+  const inputElement = document.querySelector('.js-name-input');
+let name = inputElement.value
+
+if (name) {
+  document.querySelector('.js-name-text')
+    .innerHTML = `Your name is: ${name}`
+}
+}
+
+</script>
+</body>
+</html>
